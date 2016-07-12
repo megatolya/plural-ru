@@ -20,9 +20,9 @@ plural(2, '%d файл', '%d файла', '%d файлов')); // 2 файла
 plural(5, '%d файл', '%d файла', '%d файлов')); // 5 файлов
 
 // rare case (one or several of smth):
-
 plural(1, 'Оформить товар', 'Оформить товары')); // Оформить товар
 plural(21, 'Оформить товар', 'Оформить товары')); // Оформить товары
+
 
 // godmode example with number modification:
 
