@@ -9,15 +9,20 @@ Examples:
 ```js
 var plural = require('plural-ru');
 
-// most common use:
+// common and simple use:
+plural(1, 'файл', 'файла', 'файлов')); // файл
+plural(2, 'файл', 'файла', 'файлов')); // файла
+plural(5, 'файл', 'файла', 'файлов')); // файлов
 
+// common use:
 plural(1, '%d файл', '%d файла', '%d файлов')); // 1 файл
-
 plural(2, '%d файл', '%d файла', '%d файлов')); // 2 файла
+plural(5, '%d файл', '%d файла', '%d файлов')); // 5 файлов
 
 // rare case (one or several of smth):
 
-plural(2, 'Купить товар', 'Оформить товары')); // Оформить товары
+plural(1, 'Оформить товар', 'Оформить товары')); // Оформить товар
+plural(21, 'Оформить товар', 'Оформить товары')); // Оформить товары
 
 // godmode example with number modification:
 
