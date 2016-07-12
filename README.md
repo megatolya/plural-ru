@@ -9,15 +9,17 @@ Examples:
 ```js
 var plural = require('plural-ru');
 
+// most common use:
+
 plural(1, '%d файл', '%d файла', '% файлов')); // 1 файл
 
 plural(2, '%d файл', '%d файла', '% файлов')); // 2 файла
 
-plural(2, 'файл', 'файлы')); // файлы
+// rare case (one or several of smth):
 
-plural(1000, 'файл', 'файлы')); // файлы
+plural(2, 'Купить товар', 'Оформить товары')); // Оформить товары
 
-// godmode example:
+// godmode example with number modification:
 
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
