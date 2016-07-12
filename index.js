@@ -2,28 +2,29 @@
 
 var slice = Array.prototype.slice;
 
-module.exports = function (num, one, several, many, modifyNumber) {
-    var args = slice.call(arguments);
+module.exports = function (num) {
+    var forms = slice.call(arguments, 1);
+    var modifyNumber;
 
-    if (args.length < 3 && typeof args[2] !== 'function') {
-        throw new TypeError('Not enough arguments passed');
+    if (typeof forms[forms.length - 1] === 'function') {
+        modifyNumber = forms.pop();
     }
 
-    if (typeof args[2] === 'function') {
-        modifyNumber = args[2];
-        args[3] = args[2] = args[1];
-    }
+    var str;
 
-    if (!args[3]) {
-        args[3] = args[2];
-    }
+    switch (forms.length) {
+        case 1:
+            str = forms[0];
+            break;
 
-    if (typeof many === 'function') {
-        modifyNumber = many;
-        args[3] = args[2];
-    }
+        case 2:
+            str = num > 1 ? forms[1] : forms[0];
+            break;
 
-    var str = args[plural(num)];
+        default:
+            str = forms[plural(num)];
+            break;
+    }
 
     if (modifyNumber) {
         num = modifyNumber(num);
@@ -41,10 +42,10 @@ function parse(str, num) {
 
 function plural(a) {
     if (a % 10 === 1 && a % 100 !== 11) {
-        return 1;
+        return 0;
     } else if (a % 10 >= 2 && a % 10 <= 4 && (a % 100 < 10 || a % 100 >= 20)) {
-        return 2;
+        return 1;
     } else {
-        return 3;
+        return 2;
     }
 }

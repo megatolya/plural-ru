@@ -7,24 +7,25 @@ describe('plural-ru', function() {
         const several = '%d файла';
         const many = '%d файлов';
 
-        assert.equal('0 файлов', plural(0, one, many));
+        assert.equal('0 файл', plural(0, one, many));
         assert.equal('0 файлов', plural(0, one, several, many));
     });
 
-    it('Several = many', function() {
+    it('Several or one', function() {
         const one = 'Скачать файл';
         const many = 'Скачать файлы';
 
         assert.equal(one, plural(1, one, many));
         assert.equal(many, plural(2, one, many));
         assert.equal(many, plural(10, one, many));
+        assert.equal(many, plural(21, one, many));
         assert.equal(one, plural(1, one, many, many));
         assert.equal(many, plural(2, one, many, many));
         assert.equal(many, plural(3, one, many, many));
-        assert.equal(many, plural(10, one, many, many));
+        assert.equal(one, plural(21, one, many, many));
     });
 
-    it('Several != many', function() {
+    it('Several and many', function() {
         const one = 'Один файл';
         const several = 'Два файла';
         const many = 'Много файлов';
@@ -33,21 +34,6 @@ describe('plural-ru', function() {
         assert.equal(several, plural(3, one, several, many));
         assert.equal(several, plural(4, one, several, many));
         assert.equal(many, plural(5, one, several, many));
-    });
-
-    it('Not enough arguments', function () {
-        const fn1 = function () {
-            plural(1, 'Файл');
-        };
-        const fn2 = function () {
-            plural(0, function () {});
-        };
-        const fn3 = function () {
-            plural(0, function () {});
-        };
-        assert.throws(fn1, TypeError);
-        assert.throws(fn2, TypeError);
-        assert.throws(fn3, TypeError);
     });
 
     it('Templating', function () {
