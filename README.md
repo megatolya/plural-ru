@@ -27,3 +27,9 @@ function numberWithSpaces(x) {
 
 plural(1000000, '%d доллар', '%d доллара', '%d долларов', numberWithSpaces); // 1 000 000 долларов
 ```
+
+### Installation
+
+```
+npm install --save plural-ru
+```
