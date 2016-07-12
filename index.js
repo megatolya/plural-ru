@@ -30,15 +30,8 @@ module.exports = function (num) {
         num = modifyNumber(num);
     }
 
-    return parse(str, num);
-}
-
-function parse(str, num) {
-    var args = slice.call(arguments, 1);
-    var i = 0;
-
     return str.replace(/%d/g, num);
-}
+};
 
 function plural(a) {
     if (a % 10 === 1 && a % 100 !== 11) {
