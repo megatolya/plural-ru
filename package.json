@@ -1,0 +1,33 @@
+{
+  "name": "plural-ru",
+  "version": "1.0.0",
+  "description": "Pluralization of russian words in simpliest way",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megatolya/plural-ru.git"
+  },
+  "keywords": [
+    "plural",
+    "russian",
+    "words",
+    "pluralization",
+    "plural",
+    "plural",
+    "ru",
+    "plural-ru"
+  ],
+  "author": "Anatoly Ostrovsky <forgetthisbox@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/megatolya/plural-ru/issues"
+  },
+  "homepage": "https://github.com/megatolya/plural-ru#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
