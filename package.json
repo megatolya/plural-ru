@@ -1,6 +1,6 @@
 {
   "name": "plural-ru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pluralization of russian words in simpliest way",
   "main": "index.js",
   "scripts": {
