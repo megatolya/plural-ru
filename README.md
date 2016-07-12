@@ -11,9 +11,9 @@ var plural = require('plural-ru');
 
 // most common use:
 
-plural(1, '%d файл', '%d файла', '% файлов')); // 1 файл
+plural(1, '%d файл', '%d файла', '%d файлов')); // 1 файл
 
-plural(2, '%d файл', '%d файла', '% файлов')); // 2 файла
+plural(2, '%d файл', '%d файла', '%d файлов')); // 2 файла
 
 // rare case (one or several of smth):
 
