@@ -36,6 +36,17 @@ describe('plural-ru', function() {
         assert.equal(many, plural(5, one, several, many));
     });
 
+    it('Several and many (noun)', function() {
+        const one = 'Один файл';
+        const several = 'Два файла';
+        const many = 'Много файлов';
+        assert.equal(one, plural.noun(1, one, several, many));
+        assert.equal(several, plural.noun(2, one, several, many));
+        assert.equal(several, plural.noun(3, one, several, many));
+        assert.equal(several, plural.noun(4, one, several, many));
+        assert.equal(many, plural.noun(5, one, several, many));
+    });
+
     it('Templating', function () {
         const one = '%d файл %d';
         const several = '%d файла %d';
@@ -51,9 +62,34 @@ describe('plural-ru', function() {
         assert.equal('1000000 файлов 1000000', plural(1000000, one, several, many));
     });
 
-    it('Modyfing number', function () {
-        assert.equal('Вы заработали $1', plural(1, 'Вы заработали %d', function (num) { return '$' + num }));
-        assert.equal('Вы богат :) Заработали $3', plural(3, 'Вы заработали %d', 'Вы богат :) Заработали %d', function (num) { return '$' + num }));
-        assert.equal('Вы супер богат :) Заработали $10', plural(10, 'Вы заработали %d', 'Вы супер богат :) Заработали %d', function (num) { return '$' + num }));
+    it('Several and many (verb)', function() {
+        const one = 'Нашлась %d';
+        const several = 'Нашлись %d';
+        const many = 'Нашлось %d';
+        assert.equal('Нашлась 1', plural.verb(1, one, several, many));
+        assert.equal('Нашлись 2', plural.verb(2, one, several, many));
+        assert.equal('Нашлись 3', plural.verb(3, one, several, many));
+        assert.equal('Нашлись 4', plural.verb(4, one, several, many));
+        assert.equal('Нашлось 5', plural.verb(5, one, several, many));
+        assert.equal('Нашлось 6', plural.verb(6, one, several, many));
+        assert.equal('Нашлось 7', plural.verb(7, one, several, many));
+        assert.equal('Нашлось 8', plural.verb(8, one, several, many));
+        assert.equal('Нашлось 9', plural.verb(9, one, several, many));
+        assert.equal('Нашлось 10', plural.verb(10, one, several, many));
+        assert.equal('Нашлось 11', plural.verb(11, one, several, many));
+        assert.equal('Нашлось 12', plural.verb(12, one, several, many));
+        assert.equal('Нашлась 1000', plural.verb(1000, one, several, many));
+        assert.equal('Нашлась 21000', plural.verb(21000, one, several, many));
+        assert.equal('Нашлись 2000', plural.verb(2000, one, several, many));
+        assert.equal('Нашлись 3000', plural.verb(3000, one, several, many));
+        assert.equal('Нашлись 4000', plural.verb(4000, one, several, many));
+        assert.equal('Нашлось 5000', plural.verb(5000, one, several, many));
+        assert.equal('Нашлось 6000', plural.verb(6000, one, several, many));
+        assert.equal('Нашлось 7000', plural.verb(7000, one, several, many));
+        assert.equal('Нашлось 8000', plural.verb(8000, one, several, many));
+        assert.equal('Нашлось 9000', plural.verb(9000, one, several, many));
+        assert.equal('Нашлось 10000', plural.verb(10000, one, several, many));
+        assert.equal('Нашлось 1000000', plural.verb(1000000, one, several, many));
+        assert.equal('Нашлось 1001000', plural.verb(1001000, one, several, many));
     });
 });
