@@ -1,6 +1,6 @@
 {
   "name": "plural-ru",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Pluralization of russian words in simpliest way",
   "main": "index.js",
   "scripts": {
@@ -15,10 +15,8 @@
     "russian",
     "words",
     "pluralization",
-    "plural",
-    "plural",
-    "ru",
-    "plural-ru"
+    "noun",
+    "verb"
   ],
   "author": "Anatoly Ostrovsky <forgetthisbox@gmail.com>",
   "license": "MIT",
