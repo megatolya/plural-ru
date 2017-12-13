@@ -41,17 +41,17 @@ noun(5, 'нашлась', 'нашлись', 'нашлось'); // нашлось
 Сложный пример из жизни
 
 ```js
-const found = noun(
+const found = verb(
     foundCount,
     'нашлась',
     'нашлись',
     'нашлось'
 );
-const ideas = verb(
+const ideas = noun(
     foundCount,
-    'нашлась',
-    'нашлись',
-    'нашлось'
+    'идея',
+    'идеи',
+    'идей'
 );
 
 console.log(`${found} ${foundCount} ${ideas} ${forSite}`);
